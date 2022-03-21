@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue ja part-07 VueJS - Events</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+
+        <button v-on:click="count +=1">+</button>
+        <small>click me {{count}} time</small>
+
+
+        <hr>
+        <button v-on:click="total (1)">+</button>
+        <button v-on:click="total(-1)">-</button>
+        <small>click me {{ totalValue }} times</small>
+
+        <hr>
+        <button @click="Hasan">Nafiz</button>
+        <hr>
+
+        <button @click="say ('hi')">hii</button>
+        <button @click="say('Hello')">Hello</button>
+
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Nahid..',
+                count: 0,
+                totalValue: 0,
+            },
+            methods: {
+                total(val) {
+                    this.totalValue += val;
+                },
+                Hasan(event) {
+                    alert(this.message)
+                    if (event) {
+                        console.log(event.target.tagName)
+                    }
+                },
+
+                say(msg) {
+                    alert(msg)
+                }
+
+
+            },
+        });
+    </script>
+</body>
+
+</html>

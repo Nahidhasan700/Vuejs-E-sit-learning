@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue ja part-03 loop</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="data in todos">{{data.text}}--{{data.title}}--{{data.type}}</li>
+        </ul>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                todos: [{
+                    text: 'java',
+                    title: 'language',
+                    type: 'phone'
+                }, {
+                    text: 'html',
+                    title: 'web development',
+                    type: 'phone computer etc'
+                }, {
+                    text: 'c',
+                    title: 'high level language',
+                    type: 'only computer'
+                }, ]
+            }
+        })
+    </script>
+</body>
+
+</html>

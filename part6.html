@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue ja part-06 tow way data binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        my name is:{{name}}
+        <br>
+        <input type="text" v-model="name">
+        <br>
+        <input type="checkbox" v-model="status">
+        <small>Status is: {{status}}</small>
+
+        <hr>
+
+        <input type="checkbox" value="Mim" v-model="names">Mim
+        <input type="checkbox" value="Nafiz" v-model="names">Nafiz
+        <input type="checkbox" value="Kamrun" v-model="names">kamrun
+        <input type="checkbox" value="Babu" v-model="names">Babu
+        <input type="checkbox" value="Nasrin" v-model="names">Nasrin
+        <p> A list of names: {{names.join(',')}}</p>
+
+        <hr>
+        <input type="radio" value="good" v-model="felling">good
+        <input type="radio" value="great" v-model="felling">great
+        <input type="radio" value="nice" v-model="felling">nice
+
+        <p> Feelings: {{felling}}</p>
+
+
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Nahid..',
+                name: 'Nahid',
+                status: true,
+                names: [],
+                felling: null,
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+</html>
